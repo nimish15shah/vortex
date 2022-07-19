@@ -255,10 +255,15 @@ def multi_bar_plots(df, col_to_val_ls_d):
   # df['full_utilization'] = df['IPC'] / (df['threads'] * df['cores'] * df['clusters'])
   # y= 'full_utilization'
 
+  # fig_dims = (2.5, 1.7)
+  # plt.figure(figsize=fig_dims) 
+
   sns.set(style= 'white')
+  # sns.set_context('paper')
+
   # ax= sns.barplot(x= 'args', y= y, hue= 'threads', data=df, order= order)
   ax= sns.barplot(x= y, y= 'args', hue= 'threads', data=df, order= order)
-  common_plt_cmd(ax, path= f'{y}.png', savefig= True)
+  common_plt_cmd(ax, path= f'{y}.pdf', savefig= True)
 
 
 def common_plt_cmd(ax, path = None, savefig= False):
